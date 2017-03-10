@@ -1,0 +1,367 @@
+Export date: 2/25/2017 11:05:40 AM
+Access Level: OEM
+
+
+XXXXXXXX
+	Model	XXXXXXXX
+	Protocol Version	2
+	Parameter Block Version	0
+	Model Number	12397621
+	Serial Number	1267
+	Mfg Date Code	15084
+	Hardware Version	1.914
+	OS Version	30
+	Build Number	48
+	SM Version	2.00
+	Param Blk Version	1.00
+	VCL App Version	1.00
+	Vehicle Serial Number	4294967295
+
+
+
+
+
+
+Menu 1	Menu 2	Menu 3	Menu 4	Menu 5	Menu 6	Menu 7	Value	Min	Max	Unit	Read Access	Write Access
+Program							
+	Control Mode Select						2	0	2		OEM	OEM
+	0 - Speed Mode Express						
+		Max Speed					6000	100	6000	rpm	OEM	OEM
+		Kp					15	0	100	%	OEM	OEM
+		Ki					30	5	100	%	OEM	OEM
+		Accel Rate					2.5	0.1	30.0	Seconds	OEM	OEM
+		Decel Rate					10.0	0.1	30.0	Seconds	OEM	OEM
+		Brake Rate					1.0	0.1	30.0	Seconds	OEM	OEM
+		Pump Enable					Off	Off	On		OEM	OEM
+		Regen Lower Enable					Off	Off	On		OEM	OEM
+	1 - Speed Mode						
+		Speed Controller					
+			Max Speed				6000	100	6000	rpm	OEM	OEM
+			Kp				15	0	300	%	OEM	OEM
+			Ki LS				15	5	300	%	OEM	OEM
+			Ki HS				15	5	300	%	OEM	OEM
+			Following Error Limit				0	0	6000	rpm	OEM	OEM
+			Following Error Time				800	500	5000	ms	OEM	OEM
+			Speed Filter				14.0	5.0	500.0	Hz	OEM	OEM
+			Speed Filter Zero Speed				10.0	0.5	500.0	Hz	OEM	OEM
+			Vel Feedforward				
+				Kvff			0	0	500	Ampere	OEM	OEM
+				Build Rate			1.0	0.1	5.0	Seconds	OEM	OEM
+				Release Rate			0.4	0.1	5.0	Seconds	OEM	OEM
+			Acc Feedforward				
+				Kaff			0	0	500	Ampere	OEM	OEM
+				Kbff			0	0	500	Ampere	OEM	OEM
+				Build Rate			1.0	0.1	5.0	Seconds	OEM	OEM
+				Release Rate			0.4	0.1	5.0	Seconds	OEM	OEM
+		Response					
+			Full Accel Rate HS				5.0	0.1	30.0	Seconds	OEM	OEM
+			Full Accel Rate LS				2.0	0.1	30.0	Seconds	OEM	OEM
+			Low Accel Rate				10.0	0.1	30.0	Seconds	OEM	OEM
+			Neutral Decel Rate HS				10.0	0.1	30.0	Seconds	OEM	OEM
+			Neutral Decel Rate LS				14.0	0.1	30.0	Seconds	OEM	OEM
+			Full Brake Rate HS				1.0	0.1	30.0	Seconds	OEM	OEM
+			Full Brake Rate LS				2.0	0.1	30.0	Seconds	OEM	OEM
+			Low Brake Rate				5.0	0.1	30.0	Seconds	OEM	OEM
+			Fine Tuning				
+				Partial Decel Rate			30.0	0.1	30.0	Seconds	OEM	OEM
+				HS (High Speed)			70	0	100	%	OEM	OEM
+				LS (Low Speed)			30	0	100	%	OEM	OEM
+				Reversal Soften			20	0	100	%	OEM	OEM
+				Max Speed Accel			1.0	0.1	30.0	Seconds	OEM	OEM
+				Max Speed Decel			10.0	0.1	30.0	Seconds	OEM	OEM
+		Restraint					
+			Restraint Forward				0	0	100	%	OEM	OEM
+			Restraint Back				0	0	100	%	OEM	OEM
+			Soft Stop Speed				100	0	500	rpm	OEM	OEM
+			Position Hold				
+				Position Hold Enable			Off	Off	On		OEM	OEM
+				Position Hold Timeout Time			0.0	0.0	20.0	Seconds	OEM	OEM
+				Kp			10	2	100	%	OEM	OEM
+				Kd			15	0	100	%	OEM	OEM
+				Set Speed Settling Time			3013	0	5000	ms	OEM	OEM
+				Set Speed Threshold			30	5	100	rpm	OEM	OEM
+				Entry Rate			30	5	100	%	OEM	OEM
+				Exit Rollback Reduction			0	0	100	%	OEM	OEM
+		Pump Enable					Off	Off	On		OEM	OEM
+		Regen Lower Enable					Off	Off	On		OEM	OEM
+	2 - Torque Mode						
+		Speed Limiter					
+			Max Speed				4000	500	6000	rpm	OEM	OEM
+			Kp				30	0	100	%	OEM	OEM
+			Ki				30	5	100	%	OEM	OEM
+			Kd				10	0	100	%	OEM	OEM
+		Response					
+			Accel Rate				0.4	0.1	30.0	Seconds	OEM	OEM
+			Accel Release Rate				0.1	0.1	2.0	Seconds	OEM	OEM
+			Brake Rate				1.0	0.1	5.0	Seconds	OEM	OEM
+			Brake Release Rate				0.4	0.1	2.0	Seconds	OEM	OEM
+			Neutral Braking				0	0	100	%	OEM	OEM
+			Neutral Taper Speed				500	200	6000	rpm	OEM	OEM
+			Forward Full Restraint Speed				32000	100	32000	rpm	OEM	OEM
+			Back Full Restraint Speed				32000	100	32000	rpm	OEM	OEM
+			Fine Tuning				
+				Creep Torque			0	0	100	%	OEM	OEM
+				Brake Full Creep Cancel			50	25	100	%	OEM	OEM
+				Creep Build Rate			0.1	0.1	5.0	Seconds	OEM	OEM
+				Creep Release Rate			3.0	0.1	5.0	Seconds	OEM	OEM
+				Gear Soften			20	0	100	%	OEM	OEM
+				Brake Taper Speed			1000	200	6000	rpm	OEM	OEM
+				Reversal Soften			20	0	100	%	OEM	OEM
+				Max Speed Decel			10.0	0.1	30.0	Seconds	OEM	OEM
+	Current Limits						
+		Drive Current Limit					100	5	100	%	OEM	OEM
+		Regen Current Limit					70	5	100	%	OEM	OEM
+		Brake Current Limit					70	5	100	%	OEM	OEM
+		EMR Current Limit					70	5	100	%	OEM	OEM
+		Interlock Brake Current Limit					100	5	100	%	OEM	OEM
+		Power Limiting Map					
+			PL Nominal Speed				1500	100	4000	rpm	OEM	OEM
+			Delta Speed				500	50	1000	rpm	OEM	OEM
+			Drive Limiting Map				
+				Nominal			100	0	100	%	OEM	OEM
+				Plus Delta			100	0	100	%	OEM	OEM
+				Plus 2xDelta			100	0	100	%	OEM	OEM
+				Plus 4xDelta			100	0	100	%	OEM	OEM
+				Plus 8xDelta			100	0	100	%	OEM	OEM
+			Regen Limiting Map				
+				Nominal			100	0	100	%	OEM	OEM
+				Plus Delta			100	0	100	%	OEM	OEM
+				Plus 2xDelta			100	0	100	%	OEM	OEM
+				Plus 4xDelta			100	0	100	%	OEM	OEM
+				Plus 8xDelta			100	0	100	%	OEM	OEM
+	Throttle						
+		Throttle Type					5	1	5		OEM	OEM
+		Forward Deadband					0.75	0.00	5.00	Volt	OEM	OEM
+		Forward Map					35	0	100	%	OEM	OEM
+		Forward Max					4.25	0.00	5.00	Volt	OEM	OEM
+		Forward Offset					0	0	100	%	OEM	OEM
+		Reverse Deadband					0.75	0.00	5.00	Volt	OEM	OEM
+		Reverse Map					35	0	100	%	OEM	OEM
+		Reverse Max					4.25	0.00	5.00	Volt	OEM	OEM
+		Reverse Offset					0	0	100	%	OEM	OEM
+		Throttle Filter					4.0	0.5	125.0	Hz	OEM	OEM
+		HPD SRO Type					1	0	3		OEM	OEM
+		Sequencing Delay					0.1	0.0	5.0	Seconds	OEM	OEM
+		VCL Throttle Enable					On	Off	On		OEM	OEM
+	Brake						
+		Brake Pedal Enable					Off	Off	On		OEM	OEM
+		Brake Type					5	1	5		OEM	OEM
+		Brake Deadband					0.50	0.00	5.00	Volt	OEM	OEM
+		Brake Map					50	0	100	%	OEM	OEM
+		Brake Max					4.50	0.00	5.00	Volt	OEM	OEM
+		Brake Offset					0	0	100	%	OEM	OEM
+		Brake Filter					10.0	0.5	125.0	Hz	OEM	OEM
+		VCL Brake Enable					Off	Off	On		OEM	OEM
+	EM Brake Control						
+		Brake Type					0	0	2		OEM	OEM
+		Pull In Voltage					0	0	100	%	OEM	OEM
+		Holding Voltage					0	0	100	%	OEM	OEM
+		Battery Voltage Compensated					On	Off	On		OEM	OEM
+		Set EM Brake On Fault					On	Off	On		OEM	OEM
+		Set Speed Threshold					30	5	100	rpm	OEM	OEM
+		Release Delay					50	40	2000	ms	OEM	OEM
+		Set Speed Settling Time					3013	0	5000	ms	OEM	OEM
+		Torque Preload Delay					200	0	800	ms	OEM	OEM
+		Torque Preload Enable					On	Off	On		OEM	OEM
+		Torque Preload Cancel Delay					0	0	120	Seconds	OEM	OEM
+		EM Brake Fault Motor Revs					4.0	1.0	20.0		OEM	OEM
+	Drivers						
+		Main Contactor					
+			Main Enable				On	Off	On		OEM	OEM
+			Main Interlock Type				0	0	1		OEM	OEM
+			Pull In Voltage				100	0	100	%	OEM	OEM
+			Holding Voltage				100	0	100	%	OEM	OEM
+			Battery Voltage Compensated				Off	Off	On		OEM	OEM
+			Interlock Type				1	0	2		OEM	OEM
+			Open Delay				0.1	0.0	40.0	Seconds	OEM	OEM
+			Weld Check Enable				On	Off	On		OEM	OEM
+			Main DNC Check Enable				On	Off	On		OEM	OEM
+			Main DNC Runtime Threshold				0.0	0.0	200.0	Volt	OEM	OEM
+			Precharge Enable				On	Off	On		OEM	OEM
+		Proportional Driver					
+			PD Enable				Off	Off	On		OEM	OEM
+			Hyd Lower Enable				Off	Off	On		OEM	OEM
+			PD Max Current				2.00	0.00	2.00	Ampere	OEM	OEM
+			PD Min Current				0.05	0.00	2.00	Ampere	OEM	OEM
+			PD Dither %				0	0	100	%	OEM	OEM
+			PD Dither Period				16	16	112	ms	OEM	OEM
+			PD Kp				10	1	100	%	OEM	OEM
+			PD Ki				10	1	100	%	OEM	OEM
+		Driver 3					
+			Contactor Enable				On	Off	On		OEM	OEM
+			Pull In Voltage				100	0	100	%	OEM	OEM
+			Holding Voltage				100	0	100	%	OEM	OEM
+		Fault Checking					
+			Driver 1 Checks Enable				Off	Off	On		OEM	OEM
+			Driver 2 Checks Enable				Off	Off	On		OEM	OEM
+			Driver 3 Checks Enable				Off	Off	On		OEM	OEM
+			Driver 4 Checks Enable				On	Off	On		OEM	OEM
+			PD Checks Enable				On	Off	On		OEM	OEM
+			External Supply Max				200	0	200	mAmpere	OEM	OEM
+			External Supply Min				0	0	200	mAmpere	OEM	OEM
+		PWM Frequency					200	100	1000	Hz	OEM	OEM
+	Motor						
+		Typical Max Speed					4000	500	8000	rpm	OEM	OEM
+		Control Algorithms					
+			Motor Technology				1	0	1		OEM	OEM
+			0 - ACIM (Induction Motor)				
+				Characterization Tests			
+					Test Enable		0	0	1		OEM	OEM
+					Test Throttle		0	-1	1		OEM	OEM
+					Motor Poles		4	2	12		OEM	OEM
+					Max Test Speed		2000	500	8000	rpm	OEM	OEM
+					Max Test Current		70	10	100	%	OEM	OEM
+					SlipGain		3.20	0.00	200.00		OEM	OEM
+					Current Reg Tuning Test Enable		0	0	1		OEM	OEM
+				Field Weakening Control			
+					FW Base Speed		6000	200	12000	rpm	OEM	OEM
+					Field Weakening Drive		50	0	100	%	OEM	OEM
+					Weakening Rate Drive		5	0	100	%	OEM	OEM
+					Min Field Current		0	0	800	Ampere	OEM	OEM
+				Swap Two Phases			Off	Off	On		OEM	OEM
+				Motor Type			0	0	302		OEM	OEM
+				LOS (Limited Operating Strategy)			
+					LOS Upon Encoder Fault		On	Off	On		OEM	OEM
+					LOS Max Speed		800	100	2000	rpm	OEM	OEM
+					LOS Max Current		400	100	650	Ampere	OEM	OEM
+					LOS Max Mod Depth		50	15	100	%	OEM	OEM
+					LOS Accel Rate		7.0	2.0	15.0	Seconds	OEM	OEM
+					LOS Decel Rate		3.0	2.0	15.0	Seconds	OEM	OEM
+			1 - PMAC (Permanent Magnet Motor)				
+				Characterization Tests			
+					Test Enable		0	0	1		OEM	OEM
+					Test Throttle		0	-1	1		OEM	OEM
+					Max Test Speed		3000	1000	6000	rpm	OEM	OEM
+					Max Test Current		20	10	30	%	OEM	OEM
+					Current Reg Autotune Bypass		0	0	1		OEM	OEM
+				Field Weakening Control			
+					FW Base Speed		3000	200	12000	rpm	OEM	OEM
+					Weakening Rate Drive		5	0	100	%	OEM	OEM
+					Weakening Rate Regen		5	0	100	%	OEM	OEM
+					Drv Kp LS		20	1	100	%	OEM	OEM
+					Drv Kp HS		20	1	100	%	OEM	OEM
+					MDC IqClamp Setpoint		100	0	110	%	OEM	OEM
+					MDC IqClamp Rate Drive		30	0	100	%	OEM	OEM
+					MDC IqClamp Rate Regen		20	1	100	%	OEM	OEM
+					MDC IqClamp Kp		0.00	0.00	2.00		OEM	OEM
+					Demag Protection Current		400	100	500	Ampere	OEM	OEM
+					FeedForward Span		0	0	2000	Ampere	OEM	OEM
+				MotorData Values			
+					Tuning Voltage		114.1	24.0	200.0	Volt	OEM	OEM
+					Motor Poles		10	2	12		OEM	OEM
+					Kp Current		98	50	32767		OEM	OEM
+					Ki Current		62	0	5000		OEM	OEM
+					Gain Scheduling Factor		1.0	1.0	5.0		OEM	OEM
+					Gain Scheduling RPM		1500	500	8000	rpm	OEM	OEM
+					Iq1 MTPA		35	0	600	Ampere	OEM	OEM
+					Id1 MTPA		20	0	600	Ampere	OEM	OEM
+					Iq2 MTPA		93	0	600	Ampere	OEM	OEM
+					Id2 MTPA		56	0	600	Ampere	OEM	OEM
+					Iq3 MTPA		189	0	600	Ampere	OEM	OEM
+					Id3 MTPA		109	0	600	Ampere	OEM	OEM
+					Iq4 MTPA		314	0	600	Ampere	OEM	OEM
+					Id4 MTPA		191	0	600	Ampere	OEM	OEM
+					Decoupling		100	0	600	%	OEM	OEM
+					Invert Phasing		Off	Off	On		OEM	OEM
+					Sensor Position Offset		1787	0	4095		OEM	OEM
+					Sin/Cos Delay Comp Factor Break		531	0	4095		OEM	OEM
+					Sin/Cos Delay Comp Factor HS		855	0	4095		OEM	OEM
+					Delay Comp Break Speed		2000	100	8000	rpm	OEM	OEM
+					Delay Comp High Speed		6500	100	8000	rpm	OEM	OEM
+		Feedback Options					
+			Feedback Type				2	1	2		OEM	OEM
+			Swap Feedback Direction				On	Off	On		OEM	OEM
+			1 - Encoder				
+				Encoder Steps			64	32	256		OEM	OEM
+				Encoder Fault Setup			
+					Fault Detection Enable		On	Off	On		OEM	OEM
+					Encoder Pulse Fault Detect Time		0.5	0.0	3.0	Seconds	OEM	OEM
+					Fault Stall Time		5	0	10	Seconds	OEM	OEM
+			2 - Sin/Cos				
+				Sin Cos Fault Threshold			12.0	5.0	20.0	%	OEM	OEM
+				Sin Cos Fault Threshold High			30.1	20.0	100.0	%	OEM	OEM
+				Sin Cos Fault Time			64	10	1000	ms	OEM	OEM
+				Sin Min			367	0	1023		OEM	Factory
+				Sin Max			867	0	1023		OEM	Factory
+				Cos Min			366	0	1023		OEM	Factory
+				Cos Max			867	0	1023		OEM	Factory
+		Temperature Control					
+			Sensor Enable				On	Off	On		OEM	OEM
+			Sensor Type				3	1	5		OEM	OEM
+			Sensor Offset				0	-20	20	deg C	OEM	OEM
+			Braking Thermal Cutback Enable				Off	Off	On		OEM	OEM
+			Temperature Hot				95	0	250	deg C	OEM	OEM
+			Temperature Max				105	0	250	deg C	OEM	OEM
+			MotorTemp LOS Max Speed				800	100	3000	rpm	OEM	OEM
+	Battery						
+		Nominal Voltage					102.0	24.0	144.0	Volt	OEM	OEM
+		Kp UV					5.1	0.0	100.0	%	OEM	OEM
+		Ki UV					20	0	100	%	OEM	OEM
+		User Overvoltage					114	105	200	%	OEM	OEM
+		User Undervoltage					88	0	95	%	OEM	OEM
+		Reset Volts Per Cell					2.090	0.900	3.000	Volt	Dealer	Dealer
+		Full Volts Per Cell					2.040	0.900	3.000	Volt	Dealer	Dealer
+		Empty Volts Per Cell					1.730	0.900	3.000	Volt	Dealer	Dealer
+		Discharge Time					34	0	600	Minutes	Dealer	Dealer
+		BDI Reset Percent					75	0	100	%	Dealer	Dealer
+		Insulation Resistance Fault Threshold					0	0	999	kOhm	OEM	OEM
+	Dual Drive						
+		Dual Motor Enable					Off	Off	On		OEM	OEM
+		i:Dual Motor Slave					Off	Off	On		OEM	OEM
+		CAN Node ID Other					2	1	127		OEM	OEM
+		LOS Max Speed					800	100	8000	rpm	OEM	OEM
+		Master					
+			Steer Angle Max (deg)				90	45	90		OEM	OEM
+			Turn Accel Rate				5.0	0.1	30.0	Seconds	OEM	OEM
+			Critical Angle (deg)				70	45	90		OEM	OEM
+			Max Turn Speed				30	0	100	%	OEM	OEM
+			Inner Wheel Speed				-100.0	-100.0	0.0	%	OEM	OEM
+			Steer Type				5	1	5		OEM	OEM
+			Steer Pot Min				0.50	0.00	6.25	Volt	OEM	OEM
+			Steer Pot Zero				2.50	0.00	6.25	Volt	OEM	OEM
+			Steer Pot Max				4.50	0.00	6.25	Volt	OEM	OEM
+			VCL Steer Enable				Off	Off	On		OEM	OEM
+		Slave					
+			Turn Accel Rate				5.0	0.1	30.0	Seconds	OEM	OEM
+			Critical Angle (deg)				70	45	90		OEM	OEM
+			Steer Fault Min				0.25	0.00	5.50	Volt	OEM	OEM
+			Steer Fault Max				4.75	0.00	5.50	Volt	OEM	OEM
+		Turn Feedforward					
+			Turn Accel Rate				5.0	0.1	30.0	Seconds	OEM	OEM
+			Turn Kvff				0	0	500	Ampere	OEM	OEM
+			Turn ff Build Rate				1.0	0.1	5.0	Seconds	OEM	OEM
+			Turn ff Release Rate				0.4	0.1	2.0	Seconds	OEM	OEM
+	Vehicle						
+		Metric Units					Off	Off	On		OEM	OEM
+		Speed to RPM					253.0	10.0	3000.0		OEM	OEM
+		Capture Speed 1					4500	0	8000	rpm	OEM	OEM
+		Capture Speed 2					4500	0	8000	rpm	OEM	OEM
+		Capture Distance 1					22	1	1320		OEM	OEM
+		Capture Distance 2					100	1	1320		OEM	OEM
+		Capture Distance 3					150	1	1320		OEM	OEM
+	Emergency Reverse						
+		EMR Enable					Off	Off	On		OEM	OEM
+		EMR Type					0	0	3		OEM	OEM
+		EMR Dir Interlock					Off	Off	On		OEM	OEM
+		EMR Time Limit					3.0	0.0	30.0	Seconds	OEM	OEM
+		EMR Speed					1000	50	6000	rpm	OEM	OEM
+		EMR Accel Rate					0.1	0.1	3.0	Seconds	OEM	OEM
+		EMR Decel Rate					0.1	0.1	3.0	Seconds	OEM	OEM
+	Interlock Braking						
+		Enable					On	Off	On		OEM	OEM
+		Decel Rate HS					1.5	0.1	30.0	Seconds	OEM	OEM
+		Decel Rate LS					2.0	0.1	30.0	Seconds	OEM	OEM
+		Interlock Brake Timeout					5.0	0.0	8.0	Seconds	OEM	OEM
+	CAN Interface						
+		CANopen Interlock					Off	Off	On		OEM	OEM
+		CAN Node ID 1					38	1	127		OEM	OEM
+		CAN Node ID 2					39	1	127		OEM	OEM
+		CAN Node ID 3					40	1	127		OEM	OEM
+		CAN Node ID 4					41	1	127		OEM	OEM
+		Supervisor Node ID					70	1	127		OEM	OEM
+		Baud Rate					2	-3	4		OEM	OEM
+		Heartbeat Rate					100	16	200	ms	OEM	OEM
+		PDO Timeout Period					12	0	200	ms	OEM	OEM
+		Emergency Message Rate					16	16	200	ms	OEM	OEM
+		Suppress CANopen Init					0	0	1		OEM	OEM
+	Reset Controller						0	0	1		OEM	OEM
