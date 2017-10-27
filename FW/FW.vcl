@@ -62,6 +62,10 @@ throttle_low	equals	User11
 Count_Low		equals	User12
 Count_High		equals  User13
 
+BMS_temp		equals	User14
+SOC 			equals  User15
+flashing_H		equals	User16
+flashing_L		equals	User17
 SetInterlock	equals	User_bit4
 
 ;---------------- Initialization ----------------------------
@@ -73,6 +77,8 @@ state = 0
 DisplayState = 1
 Count_Low = 0
 Count_High = 0
+flashing_L = 0
+flashing_H = 0
 
 N_MASK=0x01 //netural is the first bit
 DV_MASK=0x02  // Drive is the second bit
@@ -169,8 +175,8 @@ Setup_Mailbox_Data(pdoRecv,8,
 					0,
 					0,
 					0,
-					0,
-					0)
+					@SOC,
+					@BMS_temp)
 
 Startup_CAN()
 CAN_Set_Cyclic_Rate( 30 );actually 120ms
@@ -218,8 +224,8 @@ Mainloop:
 	}
 	else if (DisplayState = 2)
 	{
-		temp = Controller_Temperature/10
-		Put_Spy_Message("CT:", temp, "C", PSM_Decimal)
+		;temp = Controller_Temperature/10
+		Put_Spy_Message("BT:", BMS_temp, "C", PSM_Hex)
 
 		if (Count_High = 20){
 			DisplayState = 1
@@ -227,29 +233,29 @@ Mainloop:
 		}
 	}
 
-	if((Motor_Temperature >= 900) and (Motor_Temperature <= 1000)) ;0 to 60 even intervals from 60 to 100 degrees Celsius
+	if((SOC >= 40)) ;0 to 60 even intervals from 60 to 100 degrees Celsius
 	{
 		Put_Spy_LED(8223)
 	}
-	else if((Motor_Temperature >= 800) & (Motor_Temperature < 900))
+	else if((SOC >= 30) & (SOC < 40))
 	{
 		Put_Spy_LED(8207)
 	}
-	else if((Motor_Temperature >= 700) & (Motor_Temperature < 800))
+	else if((SOC >= 20) & (SOC < 30))
 	{
 		Put_Spy_LED(8199)
 	}
-	else if((Motor_Temperature >= 600) & (Motor_Temperature < 700))
+	else if((SOC >= 10) & (SOC < 20))
 	{
 		Put_Spy_LED(8195)
 	}
-	else if((Motor_Temperature >= 1) & (Motor_Temperature < 600))
+	else if((SOC >= 0) & (SOC < 10))
 	{
 		Put_Spy_LED(8193)
 	}
-	else{
-		Put_Spy_LED(8192)
-	}
+	;else{
+	;	Put_Spy_LED(8192)
+	;}
 
 ;---------------- Interlock State Machine --------------------
 
@@ -268,15 +274,6 @@ Mainloop:
 	{
 		put_pwm(PWM2,32767)
 		Set_interlock()
-
-		if(ABS_Motor_RPM < 235)
-		{
-			Neutral_Braking_TrqM = 0
-		}
-		else
-		{
-			Neutral_Braking_TrqM = 32767
-		}
 
 		if(((throttle_high*255 + throttle_low) < 0) or ((throttle_high*255 + throttle_low) > 32767)) ; if throttle signal out of bounds, reset it to zero
 		{
