@@ -168,7 +168,7 @@ enable_mailbox(pdoAck)
 ;)
 ;enable_mailbox(pdoInfo)
 
-Setup_Mailbox(pdoRecvInterlock, 0, 0, 0x866, C_EVENT, C_RCV, 0, pdoAck)
+Setup_Mailbox(pdoRecvInterlock, 0, 0, 0x765, C_EVENT, C_RCV, 0, pdoAck)
 Setup_Mailbox_Data(pdoRecvInterlock,8,
 					@SetInterlock,
                     0,
@@ -179,7 +179,7 @@ Setup_Mailbox_Data(pdoRecvInterlock,8,
 					@SOC,
 					@BMS_temp)
 
-Setup_Mailbox(pdoRecvThrottle, 0, 0, 0x966, C_EVENT, C_RCV, 0, pdoAck)
+Setup_Mailbox(pdoRecvThrottle, 0, 0, 0x766, C_EVENT, C_RCV, 0, pdoAck)
 Setup_Mailbox_Data(pdoRecvThrottle,8,
 					@throttle_high,
                     @throttle_low,
