@@ -70,10 +70,10 @@ SetInterlock	equals	User_bit4
 
 ;---------------- Initialization ----------------------------
 
-SetInterlock = 0
+SetInterlock = 0 // TODO: Should start as 0
 VCL_Throttle = 0
 VCL_Brake = 0
-state = 0
+state = 0 // TODO: SHOULD START IN STATE 0
 DisplayState = 1
 Count_Low = 0
 Count_High = 0
@@ -183,8 +183,8 @@ CAN_Set_Cyclic_Rate( 30 );actually 120ms
 Setup_NMT_State(ENTER_OPERATIONAL)			;Set NMT state so we can detect global NMT commands
 Startup_CAN_Cyclic()
 
-
 Mainloop:
+
 ;--------------- Relays Control -----------------------------
 ;--------------- Mirror driver 1-> driver 5 -----------------
 ;--------------- and driver 3 -> driver 4 -------------------
@@ -200,7 +200,7 @@ Mainloop:
 		put_pwm(PWM5, 0x7fff)
 	}
 	else{
-		put_pwm(PWM5, 0)
+  	put_pwm(PWM5, 0)
 	}
 
 ;---------------- Display State Machine ----------------------
@@ -272,7 +272,7 @@ Mainloop:
 	}
 	else if(state = 1)	; Interlock ON, requested by CAN message
 	{
-		put_pwm(PWM2,32767)
+		put_pwm(PWM2,32767) ;commented out FOR TESTING
 		Set_interlock()
 
 		if(((throttle_high*255 + throttle_low) < 0) or ((throttle_high*255 + throttle_low) > 32767)) ; if throttle signal out of bounds, reset it to zero
@@ -286,12 +286,12 @@ Mainloop:
 
 		if(SetInterlock = 0)	; if interlock request is not observed, go back to pre-interlock state
 		{
-			state = 0
+			;state = 0 FIXME: COMMENTED FOR TESTING
 		}
 
 		if(Status3 > 0)
 		{
-			state = 2
+			;state = 2 FIXME: COMMENTED FOR TESTING
 		}
 	}
 	else if(state = 2)	; Trap state. No exit conditions. DO NOT TOUCH!!!!!!!
