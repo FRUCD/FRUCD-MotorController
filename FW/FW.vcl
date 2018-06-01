@@ -286,12 +286,12 @@ Mainloop:
 
 		if(SetInterlock = 0)	; if interlock request is not observed, go back to pre-interlock state
 		{
-			;state = 0 FIXME: COMMENTED FOR TESTING
+			state = 0;
 		}
 
-		if(Status3 > 0)
+		if(Status3 > 0) ; This OS defined variable has information on the driver faults.
 		{
-			;state = 2 FIXME: COMMENTED FOR TESTING
+			state = 2;
 		}
 	}
 	else if(state = 2)	; Trap state. No exit conditions. DO NOT TOUCH!!!!!!!
