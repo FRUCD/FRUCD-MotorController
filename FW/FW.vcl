@@ -70,10 +70,10 @@ SetInterlock	equals	User_bit4
 
 ;---------------- Initialization ----------------------------
 
-SetInterlock = 0 // TODO: Should start as 0
+SetInterlock = 0
 VCL_Throttle = 0
 VCL_Brake = 0
-state = 0 // TODO: SHOULD START IN STATE 0
+state = 0
 DisplayState = 1
 Count_Low = 0
 Count_High = 0
@@ -85,12 +85,11 @@ DV_MASK=0x02  // Drive is the second bit
 HV_MASK=0x04  // High voltage request is the thrid bit
 
 ;---------------- CAN Variables -----------------------------
-pdoSend           equals can1
-pdoRecvInterlock  equals can2
-debug             equals can3
-pdoAck	          equals can4
-pdoRecvThrottle   equals can5
-
+pdoSend equals can1
+pdoRecv equals can2
+debug   equals can3
+pdoAck	equals can4
+pdoInfo equals can5
 
 ;FE_Main_State	equals Main_State
 ;FE_Cap_Vol		equals Capacitor_Voltage
@@ -168,32 +167,25 @@ enable_mailbox(pdoAck)
 ;)
 ;enable_mailbox(pdoInfo)
 
-Setup_Mailbox(pdoRecvInterlock, 0, 0, 0x765, C_EVENT, C_RCV, 0, pdoAck)
-Setup_Mailbox_Data(pdoRecvInterlock,8,
+Setup_Mailbox(pdoRecv, 0, 0, 0x766, C_EVENT, C_RCV, 0, pdoAck)
+Setup_Mailbox_Data(pdoRecv,8,
 					@SetInterlock,
-                    0,
-					0,
+                    @throttle_high,
+					@throttle_low,
 					0,
 					0,
 					0,
 					@SOC,
 					@BMS_temp)
 
-Setup_Mailbox(pdoRecvThrottle, 0, 0, 0x766, C_EVENT, C_RCV, 0, pdoAck)
-Setup_Mailbox_Data(pdoRecvThrottle,8,
-					@throttle_high,
-                    @throttle_low,
-					0,
-					0,
-					0,
-					0,
-					0,
-					0)
-
 Startup_CAN()
 CAN_Set_Cyclic_Rate( 30 );actually 120ms
 Setup_NMT_State(ENTER_OPERATIONAL)			;Set NMT state so we can detect global NMT commands
 Startup_CAN_Cyclic()
+
+; The following statements make it so that precharge always takes approximately 4 seconds
+Precharge_Time = 1000 ; Changes this to 4 seconds (weird I know)
+precharge_drop_threshold = -1920 ; should be -30 in TACT
 
 Mainloop:
 
