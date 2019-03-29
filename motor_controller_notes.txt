@@ -1,0 +1,79 @@
+PD -> +ve terminal AIR
+Driver2 -> -ve terminal AIR
+Driver4 -> Solid state relay (By elimination, not by testing!)
+
+Drive1	equals	PWM1, Pin 6. (not plugged in). Get's mapped to driver 5 (PD, pin 2)
+Drive2	equals	PWM2, Pin 5. 
+	-ve terminal AIR
+Drive3	equals	PWM3, Pin 4.(not plugged in) (Mapped to driver 4)
+	Getting signal when HV enabled!!
+Drive4  equals  PWM4, Pin 3 (power electronics box, driver_precharge). 
+	FAULT: Open or short!
+	Leads to pin 13 on power electronics board.
+Proportional driver (PD) equals PWM5,  Pin 2
+	According to Wiring Harness pdf, connected to relay which controls +ve of battery pack
+	FAULT: PD open!!
+
+batt
+Pin 1: HV Request! to KSI
+
+If it is precharge line and after try precharge give it fault (open/short) must be precharge 
+resistor burnt out so it becoems open circut. If precharge fails, will always be open. 
+
+Flipped so many times, might have burned out!
+
+pwm4 and 5 because others couldn't close our relays. 
+
+-ve -> resis -> +ve
+
+pwm 1 and 4: Controlled by Curtis precharge procedure, copied into others.
+
+CAN message when request high?
+Set interlock = black magic for precharge
+
+Test if precharge resistor is the issue:
+	* Getting the resistor out of the pack is a pain in the ass, so...
+	* See if we can close the precharge relay ourselves (tells us if the circuit can be closed)
+		* Couldn't be closed if the resisotr is burned out
+
+Changes on 3/14/18:
+	* Ignore driver4 and PD fault (was the case in older versions, but not sirius's)
+Test on 3/14/18:
+	* Set state and setinterlock in firmware to 1 (not waiting for CAN message)
+	* Now, enable HV, TSAL turns on, and then turns off a little bit later.
+		* Capacitor voltage goes up to 60, then discharges until ~40 when it turns off HV
+		* Precharge failed is the reported fault. 
+		* AIR- stays at 100% (this is a good thing, I think)
+		* Need to check if Driver4 stays closed and if PD gets closed properly (likely the issue)
+
+Notes with Henry - 4/24/18
+battery voltage compensation - prechage or main compenstated to be constant. Couldn't turn off on the precharge relay. 
+Because precharge photomos is slow, any PWM will fuck it up. 
+1->5 because driver 1 current limit is too low (2 amps) (so main contactor couldn't close)
+2 for b- because 3 amp rated driver. 
+
+Not typical to have contactor on B- (lower voltage). That's why we have to turn it on ourselves.
+TACT troubleshooting
+
+Notes about fault checkign on drivers:
+Fault checking NEEDS to be on for the drivers in use. If not, it can result in very serious damage to 
+the battery pack. On 5/31/18, FE5's first real test day, the vehicle precharged properly, but then
+the AIRs were welded shut, and the main pack fuse was blown as a result of these checks not being 
+enabled. This same thing also happened to FE3. 
+
+For FE5, here is a list of driver checks which are enabled and why:
+Driver 1 Checks Enable: OFF (not actually connected to anything, only being mirrored)
+Driver 2 Checks Enable: ON (-ve AIR)
+Driver 3 Checks Enable: OFF (not actually connected to anything, only being mirrored) 
+Driver 4 Checks Enable: ON (Driver 3, which is precharge relay, gets mapped to this)
+PD Checks Enable: ON (Driver 1, the +ve AIR, is mapped to this)
+
+Regen:
+Regen limiting map menu (limit regen current based on speed)
+Nominal speed and delta speed
+Current limits (regen current limit)
+
+
+239RPM is 5kmph, can't regen below that speed.
+
+
